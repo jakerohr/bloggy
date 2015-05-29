@@ -1,0 +1,59 @@
+<div ng-app="BloggyApp">
+  <!-- <div id="loader" ng-if="$root.loading">
+    Loading...
+  </div> -->
+
+
+
+  <nav>
+    <div class="nav-wrapper teal" ng-controller="NavCtrl">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#" ng-click="showLogin()" ng-hide="currentUser" class="waves-effect waves-blue"><i class="mdi-maps-directions-walk"></i></a></li>
+        <li><a href="#!" ng-show="currentUser">Welcome, {{currentUser.firstName || 'User'}}</a></li>
+        <li><a href="#" ng-click="logout()" ng-show="currentUser" class="waves-effect waves-blue"><i class="mdi-maps-hotel"></i></a></li>
+        <li><a href="/" class="waves-effect waves-blue"><i class="mdi-action-home"></i></a></li>
+        <li><a href="/about" class="waves-effect waves-blue"><i class="mdi-action-info"></i></a></li>
+      </ul>
+       <ul class="side-nav" id="mobile-demo">
+        <li><a href="/"><i class="mdi-action-home waves-blue">Home</i></a></li>
+        <li><a href="/about"><i class="mdi-action-info waves-blue">About</i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="container">
+
+
+
+
+    <!-- <div ng-controller="NavCtrl" style="background: black; padding: 10px; color: white;">
+      <div class="row">
+        <div class="col-sm-6">
+          <a href="/">Home</a> | <a href="/about">About</a>
+        </div>
+        <div class="text-right col-sm-6">
+          <a href="#" ng-click="showLogin()" ng-hide="currentUser">Login</a>
+          <span ng-show="currentUser">{{currentUser.firstName || 'User'}} |</span>
+          <a href="#" ng-click="logout()" ng-show="currentUser">Logout</a>
+
+        </div>
+      </div>
+    </div>  -->
+   <alerts></alerts>
+    <ng-view></ng-view>
+    <div class="preloader-wrapper big active" ng-if="$root.loading">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle center-align"></div>
+        </div><div class="gap-patch">
+          <div class="circle center-align"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle center-align"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
